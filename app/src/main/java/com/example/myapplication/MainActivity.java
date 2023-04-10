@@ -20,6 +20,9 @@ public class MainActivity extends Activity {
     ListView listview;
     Button Addbutton;
     EditText GetValue;
+    EditText GetValue1;
+    EditText GetValue2;
+
     String[] ListElements = new String[] {};
 
     @Override
@@ -29,8 +32,9 @@ public class MainActivity extends Activity {
 
         listview = (ListView) findViewById(R.id.listView1);
         Addbutton = (Button) findViewById(R.id.button1);
-        GetValue = (EditText) findViewById(R.id.editText1);
-
+        GetValue = (EditText) findViewById(R.id.editText);
+        GetValue1 = (EditText) findViewById(R.id.editText1);
+        GetValue2 = (EditText) findViewById(R.id.editText2);
         final List < String > ListElementsArrayList = new ArrayList < String >
                 (Arrays.asList(ListElements));
 
@@ -47,8 +51,11 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
 
                 ListElementsArrayList.add(GetValue.getText().toString());
+                ListElementsArrayList.add(GetValue1.getText().toString());
+                ListElementsArrayList.add(GetValue2.getText().toString());
                 adapter.notifyDataSetChanged();
             }
+
         });
     }
 }
